@@ -2,15 +2,17 @@
 > 本指南只对Vue结合typescript使用进行指导，不对typescript 解读，如需了解typescript请上官网
 
 ## 目录
-- [`@Prop`](#props)
-- [`@PropSync`](#propsUpdate)
-- [`@Provide`](#Provide)
-- [`@Model`](#Model)
-- [`@Watch`](#Watch)
-- [`@Inject`](#Provide)
-- [`@ProvideReactive`](#ProvideReactive)
-- [`@Emit`](#Emit)
-- [`@Ref`](#Ref)
+- [`@Prop`](#props) props
+- [`@PropSync`](#propsUpdate) props修改
+- [`@Provide`](#Provide) Provide
+- [`@Model`](#Model) Model
+- [`@Watch`](#Watch) Watch
+- [`@Inject`](#Provide) Inject
+- [`@ProvideReactive`](#ProvideReactive) 响应式Provide
+- [`@Emit`](#Emit) Emit
+- [`@Ref`](#Ref) Ref
+- [`@Ref`](#Ref) Ref
+- [`Mixins`](#Mixins)
 ## props
 
 ts版本
@@ -345,4 +347,103 @@ export default {
     }
   }
 }
+```
+
+## <a id="Mixins"> </a> Mixins
+
+ts版本
+
+```ts
+// mixin.ts
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+// You can declare a mixin as the same style as components.
+@Component
+export default class MyMixin extends Vue {
+  mixinValue = 'Hello'
+}
+
+
+// use component
+import Component, { mixins } from 'vue-class-component'
+import MyMixin from './mixin.js'
+
+// Use `mixins` helper function instead of `Vue`.
+// `mixins` can receive any number of arguments.
+@Component
+export class MyComp extends mixins(MyMixin) {
+  created () {
+    console.log(this.mixinValue) // -> Hello
+  }
+}
+```
+js版本
+
+```js
+// mixin.js
+export default {
+  data() {
+    return {
+      mixinValue: 'Hello'
+    }
+  }
+}
+
+// use component
+import MyMixin from './mixin.js'
+export defautl {
+  mixins: [MyMixin],
+  created() {
+    console.log(this.mixinValue)
+  }
+}
+
+```
+## component
+
+```vue
+<template>
+  <div>
+    <input v-model="msg">
+    <p>prop: {{propMessage}}</p>
+    <p>msg: {{msg}}</p>
+    <p>helloMsg: {{helloMsg}}</p>
+    <p>computed msg: {{computedMsg}}</p>
+    <button @click="greet">Greet</button>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component({
+  props: {
+    propMessage: String
+  }
+})
+export default class App extends Vue {
+  // initial data
+  msg = 123
+
+  // use prop values for initial data
+  helloMsg = 'Hello, ' + this.propMessage
+
+  // lifecycle hook
+  mounted () {
+    this.greet()
+  }
+
+  // computed
+  get computedMsg () {
+    return 'computed ' + this.msg
+  }
+
+  // method
+  greet () {
+    alert('greeting: ' + this.msg)
+  }
+}
+</script>
 ```
