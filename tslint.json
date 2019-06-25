@@ -13,7 +13,7 @@
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": false,
     "trailing-comma": false,
-    "semicolon": [true, "always"],
+    "semicolon": [false, "always"],
     "arrow-parens": false
   }
 }
