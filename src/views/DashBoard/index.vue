@@ -39,7 +39,5 @@ export default class DashBoard extends Vue {
 }
 </script>
 <style lang='less' scoped>
-.mj-dashboard-container {
-
-}
+// .mj-dashboard-container {}
 </style>

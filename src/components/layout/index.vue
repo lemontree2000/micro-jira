@@ -4,18 +4,11 @@
     <a-layout>
       <j-sider :collapsed="collapsed" />
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
-          <a-icon
-            class="trigger"
-            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            @click="toggleCollapsed"
-          />
-          <a-avatar
-            :size="32"
-            icon="user"
-          />
-        </a-layout-header>
-        <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
+        <j-header
+          :collapsed="collapsed"
+          @toggleCollapsed="toggleCollapsed"
+        />
+        <a-layout-content class="mj-mian-container">
           <slot></slot>
         </a-layout-content>
       </a-layout>
@@ -26,10 +19,12 @@
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import JSider from './sider.vue'
+import JHeader from './header.vue'
 
 @Component({
   components: {
-    JSider
+    JSider,
+    JHeader
   }
 })
 export default class JLayout extends Vue {
@@ -61,15 +56,11 @@ export default class JLayout extends Vue {
 <style lang='less' scoped>
 .mj-layout-container {
   height: 100%;
-  .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-    &:hover {
-      color: #1890ff;
-    }
+  .mj-mian-container {
+    margin: 24px 16px;
+    padding: 24px;
+    background: #fff;
+    min-height: 280px;
   }
 }
 </style>
