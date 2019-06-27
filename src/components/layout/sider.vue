@@ -13,12 +13,16 @@
       :defaultSelectedKeys="['1']"
     >
       <a-menu-item key="1">
-        <a-icon type="user" />
-        <span>nav 1</span>
+        <router-link to="/about">
+          <a-icon type="user" />
+          <span>nav 1</span>
+        </router-link>
       </a-menu-item>
       <a-menu-item key="2">
-        <a-icon type="video-camera" />
-        <span>nav 2</span>
+        <router-link to="/dd">
+          <a-icon type="video-camera" />
+          <span>nav 2</span>
+        </router-link>
       </a-menu-item>
       <a-menu-item key="3">
         <a-icon type="upload" />

@@ -11,7 +11,7 @@
     <section class="center"></section>
     <section class="right">
       <a-dropdown placement="bottomRight">
-        <div>
+        <div class="right-user">
           <a-avatar
             :size="36"
             src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -77,14 +77,17 @@ export default class JHeader extends Vue {
     flex: 1;
   }
   .right {
-    &-user-name {
-      .anticon-down {
-        font-size: 12px;
+    &-user {
+      cursor: pointer;
+      &-name {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        .anticon-down {
+          font-size: 12px;
+        }
       }
-      display: inline-block;
-      margin-left: 10px;
-      font-size: 14px;
-      font-weight: 700;
     }
   }
   .ant-dropdown-trigger {

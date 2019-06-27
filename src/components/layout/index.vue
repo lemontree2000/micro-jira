@@ -9,7 +9,7 @@
           @toggleCollapsed="toggleCollapsed"
         />
         <a-layout-content class="mj-mian-container">
-          <slot></slot>
+          <router-view />
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -18,8 +18,8 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
-import JSider from './sider.vue'
-import JHeader from './header.vue'
+import JSider from './Sider.vue'
+import JHeader from './Header.vue'
 
 @Component({
   components: {

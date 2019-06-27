@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <j-layout> 
-      <router-view />
-    </j-layout>
+    <router-view></router-view>
   </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
-import JLayout from '@/components/layout/index.vue'
+import JLayout from '@/components/Layout/index.vue'
 
 @Component({
   components: {
