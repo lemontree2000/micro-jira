@@ -24,7 +24,9 @@ export default class DashBoard extends Vue {
   get resoveMsg(): string {
     return `Edward ${this.msg}`
   }
-  // created() {}
+  created() {
+    console.log(this.$route)
+  }
   // mounted() {}
   // 5、methods
   reverseString(): string {

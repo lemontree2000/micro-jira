@@ -11,7 +11,7 @@ export default {
     {
       path: '/',
       name: 'DashBoard',
-      component: DashBoard
+      component: DashBoard,
     },
     {
       path: '*',
