@@ -8932,7 +8932,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
@@ -9236,6 +9236,13 @@ vue-class-component@^7.0.1, vue-class-component@^7.0.2:
   version "7.1.0"
   resolved "https://registry.npm.taobao.org/vue-class-component/download/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
   integrity sha1-sz78sQ4XI21oT3Cx6W8ZRux5Poc=
+
+vue-function-api@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npm.taobao.org/vue-function-api/download/vue-function-api-2.0.6.tgz#d3fc7a02ce9599d0af3869fbc76a43d88aeace24"
+  integrity sha1-0/x6As6VmdCvOGn7x2pD2IrqziQ=
+  dependencies:
+    tslib "^1.9.3"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
