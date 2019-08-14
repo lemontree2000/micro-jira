@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
-import JLayout from '@/components/Layout/index.vue'
+import JLayout from './components/Layout/index.vue'
 
 @Component({
   components: {
