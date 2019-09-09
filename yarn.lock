@@ -6270,6 +6270,11 @@ mutationobserver-shim@^0.3.2:
   resolved "https://registry.npm.taobao.org/mutationobserver-shim/download/mutationobserver-shim-0.3.3.tgz#65869630bc89d7bf8c9cd9cb82188cd955aacd2b"
   integrity sha1-ZYaWMLyJ17+MnNnLghiM2VWqzSs=
 
+mxgraph@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.npm.taobao.org/mxgraph/download/mxgraph-4.0.4.tgz#28b3b1e59a0deefcc4ac347dd9a03785453391ef"
+  integrity sha1-KLOx5ZoN7vzErDR92aA3hUUzke8=
+
 mz@^2.4.0:
   version "2.7.0"
   resolved "https://registry.npm.taobao.org/mz/download/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"

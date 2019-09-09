@@ -1,7 +1,7 @@
 <template>
   <!-- DashBoard -->
   <section class='mj-dashboard-container'>
-    About
+    <div id="editor"></div>
   </section>
 </template>
 
@@ -25,7 +25,34 @@ export default class About extends Vue {
     return `Edward ${this.msg}`
   }
   // created() {}
-  // mounted() {}
+  mounted() {
+    this.initEditor()
+  }
+
+  initEditor(): void {
+    // console.log(window.mxClient)
+    // // Checks if the browser is supported
+    // if (!window.mxClient.isBrowserSupported()) {
+    //   // Displays an error message if the browser is not supported.
+    //   window.mxUtils.error('Browser is not supported!', 200, false)
+    // }
+    // window.mxUtils.getAll(
+    //   ['/mxgraph/editor/resources/grapheditor.txt', window.STYLE_PATH + '/default.xml'],
+    //   (xhr: any) => {
+    //     // Adds bundle text to resources
+    //     window.mxResources.parse(xhr[0].getText())
+
+    //     // Configures the default graph theme
+    //     const themes = new Object() as any
+    //     themes.default = xhr[1].getDocumentElement()
+    //     const editor = new window.Editor(null, themes)
+    //     // Main
+    //     const a = new window.EditorUi(editor, document.getElementById('editor'))
+    //     console.log(editor, a)
+    //     window.bbb = a
+    //   }
+    // )
+  }
   // 5、methods
   reverseString(): string {
     return this.msg
@@ -40,4 +67,7 @@ export default class About extends Vue {
 </script>
 <style lang='less' scoped>
 // .mj-dashboard-container {}
+* {
+  box-sizing: content-box;
+}
 </style>
