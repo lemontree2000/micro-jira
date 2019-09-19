@@ -25,5 +25,17 @@ module.exports = {
         }
       ]
     })
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          // 'primary-color': '#5077c2',
+          // 'link-color': '#1DA57A',
+          'border-radius-base': '2px'
+        },
+        javascriptEnabled: true
+      }
+    }
   }
 }

@@ -7,8 +7,8 @@ export default [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About/index.vue')
   },
   {
-    path: '/flow',
-    name: 'flow',
-    component: () => import(/* webpackChunkName: "flow" */ '@/views/Flow/index.vue')
+    path: '/graph-editor',
+    name: 'graph-editor',
+    component: () => import(/* webpackChunkName: "graph-editor" */ '@/views/Editor/index.vue')
   }
 ]

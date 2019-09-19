@@ -1,6 +1,6 @@
 <template>
-  <!-- page -->
-  <section class="page-name">
+  <!-- 编辑器导航 -->
+  <section class="mj-editor-Toolbar">
     <p>props:{{this.propA}}</p>
     <p>data: {{msg}}</p>
     <p>computed: {{resoveMsg}}</p>
@@ -17,7 +17,7 @@ interface ListItem {
 }
 
 @Component
-export default class Flow extends Vue {
+export default class DashBoard extends Vue {
   // 1、props
   @Prop({ type: Number, default: 123455 }) readonly propA: number | undefined
   // 2、data

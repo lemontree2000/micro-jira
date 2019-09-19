@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
+    "@types/mxgraph": "lgleim/mxgraph-typings",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-plugin-typescript": "^3.8.0",

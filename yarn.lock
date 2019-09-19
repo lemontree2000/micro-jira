@@ -767,6 +767,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
+"@types/mxgraph@lgleim/mxgraph-typings":
+  version "0.0.5"
+  resolved "https://codeload.github.com/lgleim/mxgraph-typings/tar.gz/474719ec8cedbb1ae5ea2cf121a41db105043374"
+
 "@types/node@*":
   version "12.0.10"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.0.10.tgz#51babf9c7deadd5343620055fc8aff7995c8b031"
