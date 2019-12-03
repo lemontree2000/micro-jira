@@ -1,6 +1,6 @@
 FROM nginx
 
 COPY ./dist/ /usr/share/nginx/html/
-COPY ./vhost.nginx.conf /etc/nginx/conf.d/micro-jira.conf
+COPY ./docker/micro-jira.conf /etc/nginx/conf.d/micro-jira.conf
 
 EXPOSE 80
