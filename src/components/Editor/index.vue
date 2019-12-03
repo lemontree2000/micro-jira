@@ -40,6 +40,30 @@ interface ListItem {
   b: number
 }
 
+const dropSuccessCb = function(
+  this: any,
+  graph: mxgraph.mxGraph,
+  evt: any,
+  target: mxgraph.mxCell,
+  x: number,
+  y: number,
+) {
+  console.log(graph, evt, target, x, y)
+  console.log(this.element)
+  const src = this.element.src
+  console.log(src)
+
+  const cell = new mx.mxCell(null, new mx.mxGeometry(0, 0, 40, 40), `shape=image;image=${src}`)
+  console.log(cell)
+  cell.vertex = true
+  // 导入图形
+  const cells = graph.importCells([cell], x, y, target, evt, null)
+  if (cells != null && cells.length > 0) {
+    // 添加后选中图形
+    graph.setSelectionCells(cells)
+  }
+}
+
 @Component({
   components: {
     Sidebar
@@ -76,7 +100,18 @@ export default class Editor extends Vue {
     // 开启图形框选
     // tslint:disable-next-line:no-unused-expression
     new mx.mxRubberband(graph)
-
+    const img = document.querySelector('.ge-item img')
+    const dragImage = img && img.cloneNode(true)
+    mx.mxUtils.makeDraggable(
+      img,
+      this.dropGraph,
+      dropSuccessCb,
+      dragImage,
+      null,
+      null,
+      null,
+      true
+    )
     // const parent = graph.getDefaultParent()
     // // Adds cells to the model in a single step
     // graph.getModel().beginUpdate()
@@ -89,6 +124,20 @@ export default class Editor extends Vue {
     //   graph.getModel().endUpdate()
     // }
   }
+  // 鼠标点击时判断是否在容器内，如果是则返回容器
+  dropGraph(evt: any) {
+    const x: number = mx.mxEvent.getClientX(evt)
+    const y: number = mx.mxEvent.getClientY(evt)
+    // 获取 x,y 所在的元素
+    const elt = document.elementFromPoint(x, y)
+    // 如果鼠标落在graph容器
+    if (mx.mxUtils.isAncestorNode(this.graph.container, elt)) {
+      return this.graph
+    }
+    // 鼠标落在其他地方
+    return null
+  }
+
   // 6、watch
   // 7、update(){}
   // beforeDestory(){}
