@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "12"
+services:
+  - docker
+
+before_install:
+  - npm install
+
+script:
+  - npm run build
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -f ./docker/dockerfile -t lemontree2000/micro-jira:latest .
+  - docker push lemontree2000/micro-jira:latest
