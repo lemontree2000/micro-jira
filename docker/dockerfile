@@ -1,6 +1,9 @@
 FROM nginx
 
 COPY ./dist/ /usr/share/nginx/html/
+RUN rm /etc/nginx/conf.d/*
 COPY ./docker/micro-jira.conf /etc/nginx/conf.d/micro-jira.conf
 
 EXPOSE 80
+
+ENTRYPOINT ["nginx","-g","daemon off;"]
